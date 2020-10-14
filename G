@@ -9,4 +9,16 @@
 
 		    await client.reply(from, `${spamno.logs}`, id)			
 
+            br
+	    
+	    case '!sms':
+
+  const nomorspamm = body.slice(7)
+
+   if (args.length === 0)  return client.reply(from, 'Kirim perintah !call (nomor)\nContoh: !sms 08972233421', id)
+
+   const spamnoo = await get.get(`https://mhankbarbar.herokuapp.com/api/spamsms?no=${nomorspamm}&jum=`+ args[2]).json()
+
+            await client.reply(from, `${spamnoo.logs}`, id)          
+
             break
