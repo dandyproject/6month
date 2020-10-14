@@ -1,0 +1,12 @@
+ '
+ case '#call':
+
+		    const nomorspam = body.slice(7)
+
+            if (args.length === 1)  return client.reply(from, 'Kirim perintah #call (nomor)\nConntoh: #call 08972233421', id)
+
+            const spamno = await get.get('https://mhankbarbar.herokuapp.com/api/spamcall?no='+ nomorspam).json()
+
+		    await client.reply(from, `${spamno.logs}`, id)			
+
+            break
